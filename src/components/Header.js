@@ -9,6 +9,14 @@ function Header ({cartCount = 0 }){
                 <Link to="/" className="brand-logo">
                     LuxeRetail
                 </Link>
+
+                <div className="desktop-links">
+                    <NavLink to="/" className="nav-link">New Arrivals</NavLink>
+                    <NavLink to="/" className="nav-link">Electronics</NavLink>
+                    <NavLink to="/" className="nav-link">Jewellery</NavLink>
+                    <NavLink to="/" className="nav-link">Men's</NavLink>
+                    <NavLink to="/" className="nav-link">Women's</NavLink>
+                </div>
             </div>
         </nav>
     )
