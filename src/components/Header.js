@@ -30,7 +30,7 @@ function Header ({cartCount = 0 }){
                     </button>
                 </div>
             </div>
-            
+
             {menuOpen && (
                 <div className="mobile-menu">
                     <NavLink to="/" className="mobile-nav-link"
@@ -46,3 +46,5 @@ function Header ({cartCount = 0 }){
         </nav>
     )
 }
+
+export default Header;
