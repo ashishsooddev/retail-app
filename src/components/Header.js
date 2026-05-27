@@ -30,6 +30,19 @@ function Header ({cartCount = 0 }){
                     </button>
                 </div>
             </div>
+            
+            {menuOpen && (
+                <div className="mobile-menu">
+                    <NavLink to="/" className="mobile-nav-link"
+                         onClick={() => setMenuOpen(false)}>
+                            Home
+                    </NavLink>
+                    <NavLink to="/" className="mobile-nav-link"
+                         onClick={() => setMenuOpen(false)}>
+                            Cart
+                    </NavLink>
+                </div>
+            )}
         </nav>
     )
 }
