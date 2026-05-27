@@ -17,6 +17,18 @@ function Header ({cartCount = 0 }){
                     <NavLink to="/" className="nav-link">Men's</NavLink>
                     <NavLink to="/" className="nav-link">Women's</NavLink>
                 </div>
+
+                <div className="header-actions">
+                    <Link to="/cart" className="cart-link">
+                        <span className="cart-icon"></span>
+                        <span className="cart-badge">{cartCount}</span>
+                    </Link>
+
+                    <button className="mobile-menu-btn"
+                        onClick={() => setMenuOpen (!menuOpen)}
+                        aria-label="Open menu">
+                    </button>
+                </div>
             </div>
         </nav>
     )
