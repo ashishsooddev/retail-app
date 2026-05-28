@@ -1,4 +1,5 @@
 import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 
 function CartItem({ item }) {
   const { removeFromCart, increaseQty, decreaseQty } =
