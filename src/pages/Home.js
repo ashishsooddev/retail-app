@@ -21,6 +21,11 @@ function reducer(state, action) {
 }
 
 function Home() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState(["all"]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   return (
 <></>
   );
