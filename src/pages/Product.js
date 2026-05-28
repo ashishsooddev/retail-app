@@ -47,3 +47,18 @@ function Product() {
             setTimeout(() => setAdded(false), 2000);
         }
     };
+    if (!product) return null;
+
+    const renderStars = (rate) => {
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            stars.push(
+                <i 
+                    key={i} 
+                    className={i < Math.floor(rate || 0) ? "fas fa-star" : "far fa-star"}
+                ></i>
+            );
+        }
+        return stars;
+    };
+
