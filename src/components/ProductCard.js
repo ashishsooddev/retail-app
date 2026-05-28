@@ -19,17 +19,13 @@ function ProductCard({ quantity, setQuantity }) {
             <span className="quantity-label">Quantity</span>
             <div className="quantity-box">
                 <button 
-                    className="qty-btn"
-                    onClick={decrease}
-                    disabled={quantity <= 1}
+                    className="qty-btn"onClick={decrease}disabled={quantity <= 1}
                 >
                     <i className="fas fa-minus"></i>
                 </button>
                 <span className="qty-value">{quantity}</span>
                 <button 
-                    className="qty-btn"
-                    onClick={increase}
-                    disabled={quantity >= 10}
+                    className="qty-btn" onClick={increase}disabled={quantity >= 10}
                 >
                     <i className="fas fa-plus"></i>
                 </button>
