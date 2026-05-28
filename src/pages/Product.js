@@ -82,4 +82,13 @@ function Product() {
                     </div>
                 </div>
             </div>
+ {/* ProductGallery (Similar Products) */}
+            <ProductGallery 
+                currentProductId={product.id} 
+                category={product.category}
+            />
+        </div>
+    );
+}
 
+export default Product;
