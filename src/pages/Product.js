@@ -74,4 +74,12 @@ function Product() {
                         <span className="stars">{renderStars(product.rating?.rate)}</span>
                         <span className="rating-count">({product.rating?.count} verified reviews)</span>
                     </div>
+                    * Features */}
+                    <div className="product-features">
+                        <p><i className="fas fa-truck"></i> Free express delivery on orders over $150</p>
+                        <p><i className="fas fa-shield-alt"></i> 2-year manufacturer warranty</p>
+                        <p><i className="fas fa-undo"></i> 30-day return policy</p>
+                    </div>
+                </div>
+            </div>
 
