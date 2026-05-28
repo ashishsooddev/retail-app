@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import App from './App';
 
-import './style/index.css';
+import './Style/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
