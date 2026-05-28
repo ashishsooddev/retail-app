@@ -5,7 +5,14 @@ function CartItem({ item }) {
     useContext(CartContext);
 
   return (
-   <></>
+    <div className="cart-item">
+      <img src={item.image} alt={item.title} />
+
+      <div className="cart-info">
+        <h3>{item.title}</h3>
+        <p>${item.price}</p>
+      </div>
+    </div>
   );
 }
 
