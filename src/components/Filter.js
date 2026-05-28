@@ -1,3 +1,4 @@
+
 function Filter({ categories, selectedCategory, onCategoryChange }) {
   return (
     <div className="filter-group" id="filter-group">
