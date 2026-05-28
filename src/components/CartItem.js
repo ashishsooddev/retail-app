@@ -11,6 +11,12 @@ function CartItem({ item }) {
       <div className="cart-info">
         <h3>{item.title}</h3>
         <p>${item.price}</p>
+
+        <div className="qty">
+          <button onClick={() => decreaseQty(item.id)}>-</button>
+          <span>{item.quantity}</span>
+          <button onClick={() => increaseQty(item.id)}>+</button>
+        </div>
       </div>
     </div>
   );
