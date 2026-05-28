@@ -65,4 +65,13 @@ function Product() {
                         />
                         <span className="product-badge">New Arrival</span>
                     </div>
+                    {/* Right - Details */}
+                <div className="product-right">
+                    <span className="product-category">{product.category}</span>
+                    <h1 className="product-title">{product.title}</h1>
+                    
+                    <div className="product-rating">
+                        <span className="stars">{renderStars(product.rating?.rate)}</span>
+                        <span className="rating-count">({product.rating?.count} verified reviews)</span>
+                    </div>
 
