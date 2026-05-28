@@ -9,6 +9,11 @@ import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import ProductCard from "../components/ProductCard";
 
+const initialState = {
+  category: "all",
+  sortBy: "featured",
+};
+
 function reducer(state, action) {
   switch (action.type) {
     case "SET_CATEGORY":
