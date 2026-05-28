@@ -31,8 +31,30 @@ function Home() {
   const [categories, setCategories] = useState(["all"]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
   return (
-<></>
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        const [productsData, categoriesData] = await Promise.all([
+          getProducts(),
+          getCategories(),
+        ]);
+        setProducts(productsData);
+        setCategories(["all", ...categoriesData]);
+        setError("");
+
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load products. Please try again later.");
+        
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
   );
 }
 
