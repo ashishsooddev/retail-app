@@ -53,3 +53,16 @@ function Product() {
         return stars;
     };
 
+    {/* Product Container */}
+            <div className="product-container">
+                {/* Left - Image */}
+                <div className="product-left">
+                    <div className="product-image-wrapper">
+                        <img 
+                            alt={product.title}
+                            className="product-image"
+                            src={product.image}
+                        />
+                        <span className="product-badge">New Arrival</span>
+                    </div>
+
