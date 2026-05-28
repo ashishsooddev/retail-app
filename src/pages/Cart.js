@@ -22,6 +22,14 @@ function Cart() {
             ))
           )}
         </div>
+
+        <div className="summary">
+          <h2>Order Summary</h2>
+          <p>Subtotal: ${total}</p>
+          <p>Shipping: $15</p>
+          <h3>Total: ${total + 15}</h3>
+          <button>Checkout</button>
+        </div>
       </div>
     </div>
   );
