@@ -69,7 +69,6 @@ function Product() {
 
     return (
         <div className="product-page">
-            
             <div className="nav-path">
                 <Link to="/">Home</Link> 
                 <span> / </span>
@@ -78,9 +77,8 @@ function Product() {
                 <span>{product.title}</span>
             </div>
             
-            {/* Product Container */}
+            
             <div className="product-container">
-                {/* Left - Image */}
                 <div className="product-left">
                     <div className="product-image-wrapper">
                         <img 
@@ -101,7 +99,7 @@ function Product() {
                     </div>
                 </div>
                 
-                {/* Right - Details */}
+                
                 <div className="product-right">
                     <span className="product-category">{product.category}</span>
                     <h1 className="product-title">{product.title}</h1>
@@ -113,11 +111,7 @@ function Product() {
                     
                     <h2 className="product-price">${product.price}</h2>
                     <p className="product-description">{product.description}</p>
-                    
-                    {/* ProductCard (Quantity Selector) */}
                     <ProductCard quantity={quantity} setQuantity={setQuantity} />
-                    
-                    {/* Buttons */}
                     <div className="product-buttons">
                         <button 
                             className={`btn-add-cart ${added ? 'added' : ''}`}
@@ -131,7 +125,7 @@ function Product() {
                         </button>
                     </div>
                     
-                    {/* Features */}
+                    
                     <div className="product-features">
                         <p><i className="fas fa-truck"></i> Free express delivery on orders over $150</p>
                         <p><i className="fas fa-shield-alt"></i> 2-year manufacturer warranty</p>
@@ -140,7 +134,7 @@ function Product() {
                 </div>
             </div>
             
-            {/* ProductGallery (Similar Products) */}
+            
             <ProductGallery 
                 currentProductId={product.id} 
                 category={product.category}
