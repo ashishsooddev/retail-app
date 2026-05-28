@@ -14,3 +14,36 @@ function Product() {
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(true);
     const [added, setAdded] = useState(false);
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                setLoading(true);
+                setAdded(false);
+                
+                const productId = parseInt(id);
+                if (isNaN(productId) || productId < 1 || productId > 20) {
+                    navigate('/');
+                    return;
+                }
+
+                const response = await axios.get(
+                    `https://fakestoreapi.com/products/${id}`
+                );
+                
+                setProduct(response.data);
+                setLoading(false);
+            } catch (err) {
+                navigate('/');
+            }
+        };
+        fetchProduct();
+    }, [id, navigate]);
+
+    const handleAddToCart = () => {
+        if (product) {
+            addToCart({ ...product, quantity });
+            setAdded(true);
+            setTimeout(() => setAdded(false), 2000);
+        }
+    };
