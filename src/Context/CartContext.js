@@ -39,6 +39,7 @@ export function CartProvider({ children }) {
         increaseQty,
         decreaseQty,
       }}>
+        {children}
     </CartContext.Provider>
   );
 }
