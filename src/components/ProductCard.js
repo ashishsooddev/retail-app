@@ -1,4 +1,3 @@
-// src/components/QuantitySelector.jsx
 import { useState } from "react";
 
 function QuantitySelector({ quantity, setQuantity }) {
