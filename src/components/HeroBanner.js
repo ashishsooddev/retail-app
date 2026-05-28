@@ -16,8 +16,28 @@ function HeroBanner () {
   }, []);
 
     return(
-        <></>
-    )
+      <header className="hero-banner" id="hero-carousel">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`hero-slide ${currentSlide === index ? "active" : ""}`}
+        >
+          <img src={slide.image} alt={slide.title} className="hero-image" />
+          <div className="hero-overlay">
+            <div className="hero-content">
+              <span className="hero-tag">{slide.tag}</span>
+              <h1 className="hero-title">{slide.title}</h1>
+              <p className="hero-text">{slide.text}</p>
+              <Link to="/" className="hero-button">
+                Shop Fashion
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+
+    </header>
+    );
 }
 
 export default HeroBanner;
