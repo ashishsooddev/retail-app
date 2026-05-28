@@ -1,4 +1,5 @@
 import { CartContext } from "../context/CartContext";
+import CartItem from "../components/CartItem";
 
 
 function Cart() {
@@ -7,11 +8,9 @@ function Cart() {
   for (let i = 0; i < cart.length; i++) {
     total = total + cart[i].price * cart[i].quantity;
   }
-
   return (
     <div className="cart-page">
       <h1>Your Cart</h1>
-
       <div className="cart-container">
         <div>
           {cart.length === 0 ? (
@@ -22,7 +21,6 @@ function Cart() {
             ))
           )}
         </div>
-
         <div className="summary">
           <h2>Order Summary</h2>
           <p>Subtotal: ${total}</p>
