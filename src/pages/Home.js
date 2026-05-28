@@ -32,31 +32,31 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  return (
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
+
         const [productsData, categoriesData] = await Promise.all([
           getProducts(),
           getCategories(),
         ]);
+
         setProducts(productsData);
         setCategories(["all", ...categoriesData]);
         setError("");
-
       } catch (err) {
         console.error(err);
         setError("Failed to load products. Please try again later.");
-
       } finally {
         setLoading(false);
       }
     };
+
     loadData();
   }, []);
 
-    const filteredProducts = useMemo(() => {
+  const filteredProducts = useMemo(() => {
     let result = [...products];
 
     if (state.category !== "all") {
@@ -76,58 +76,59 @@ function Home() {
       default:
         break;
     }
+
     return result;
   }, [products, state.category, state.sortBy]);
 
-    return (
+  return (
     <motion.div
-            className="home-page"
-            id="home-page"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
-        >
+      className="home-page"
+      id="home-page"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+    >
       <Header cartCount={0} />
       <HeroBanner />
       <SecondaryBanner />
 
-        <section className="filter-bar" id="filter-bar">
-            <div className="filter-wrapper">
-            <Filter
-                categories={categories}
-                selectedCategory={state.category}
-                onCategoryChange={(category) =>
-                dispatch({ type: "SET_CATEGORY", payload: category })
-                }
-            />
-            <Sort
-                sortBy={state.sortBy}
-                onSortChange={(value) =>
-                dispatch({ type: "SET_SORT", payload: value })
-                }
-            />
-            </div>
-        </section>
-        
-        <main className="product-section" id="product-section">
-            {loading && <div className="loading-box">Loading products...</div>}
-            
-            {!loading && error && <div className="error-box">{error}</div>}
+      <section className="filter-bar" id="filter-bar">
+        <div className="filter-wrapper">
+          <Filter
+            categories={categories}
+            selectedCategory={state.category}
+            onCategoryChange={(category) =>
+              dispatch({ type: "SET_CATEGORY", payload: category })
+            }
+          />
 
-            {!loading && !error && filteredProducts.length === 0 && (
-            <div className="empty-box">No products found for this category.</div>
-            )}
+          <Sort
+            sortBy={state.sortBy}
+            onSortChange={(value) =>
+              dispatch({ type: "SET_SORT", payload: value })
+            }
+          />
+        </div>
+      </section>
 
-            {!loading && !error && filteredProducts.length > 0 && (
-            <div className="product-grid" id="product-grid">
-                {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-            )}
-        </main>
+      <main className="product-section" id="product-section">
+        {loading && <div className="loading-box">Loading products...</div>}
+
+        {!loading && error && <div className="error-box">{error}</div>}
+
+        {!loading && !error && filteredProducts.length === 0 && (
+          <div className="empty-box">No products found for this category.</div>
+        )}
+
+        {!loading && !error && filteredProducts.length > 0 && (
+          <div className="product-grid" id="product-grid">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+      </main>
     </motion.div>
-
   );
 }
 
