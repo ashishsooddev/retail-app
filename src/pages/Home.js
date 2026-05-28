@@ -80,7 +80,7 @@ function Home() {
   }, [products, state.category, state.sortBy]);
 
     return (
-        <motion.div
+    <motion.div
             className="home-page"
             id="home-page"
             initial={{ opacity: 0, y: 15 }}
@@ -91,24 +91,43 @@ function Home() {
       <HeroBanner />
       <SecondaryBanner />
 
-      <section className="filter-bar" id="filter-bar">
-        <div className="filter-wrapper">
-          <Filter
-            categories={categories}
-            selectedCategory={state.category}
-            onCategoryChange={(category) =>
-              dispatch({ type: "SET_CATEGORY", payload: category })
-            }
-          />
-          <Sort
-            sortBy={state.sortBy}
-            onSortChange={(value) =>
-              dispatch({ type: "SET_SORT", payload: value })
-            }
-          />
-        </div>
-      </section>
+        <section className="filter-bar" id="filter-bar">
+            <div className="filter-wrapper">
+            <Filter
+                categories={categories}
+                selectedCategory={state.category}
+                onCategoryChange={(category) =>
+                dispatch({ type: "SET_CATEGORY", payload: category })
+                }
+            />
+            <Sort
+                sortBy={state.sortBy}
+                onSortChange={(value) =>
+                dispatch({ type: "SET_SORT", payload: value })
+                }
+            />
+            </div>
+        </section>
+        
+        <main className="product-section" id="product-section">
+            {loading && <div className="loading-box">Loading products...</div>}
+            
+            {!loading && error && <div className="error-box">{error}</div>}
+
+            {!loading && !error && filteredProducts.length === 0 && (
+            <div className="empty-box">No products found for this category.</div>
+            )}
+
+            {!loading && !error && filteredProducts.length > 0 && (
+            <div className="product-grid" id="product-grid">
+                {filteredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
+            )}
+        </main>
     </motion.div>
+
   );
 }
 
