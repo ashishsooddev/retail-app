@@ -6,7 +6,7 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   function addToCart(product) {
-    setCart([...cart, ...product, quantity: 1]);
+    setCart([...cart, { ...product, quantity: 1 }]);
   }
 
   function removeFromCart(id) {
