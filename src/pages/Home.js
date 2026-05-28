@@ -55,7 +55,7 @@ function Home() {
     };
     loadData();
   }, []);
-  
+
     const filteredProducts = useMemo(() => {
     let result = [...products];
 
@@ -78,6 +78,37 @@ function Home() {
     }
     return result;
   }, [products, state.category, state.sortBy]);
+
+    return (
+        <motion.div
+            className="home-page"
+            id="home-page"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+        >
+      <Header cartCount={0} />
+      <HeroBanner />
+      <SecondaryBanner />
+
+      <section className="filter-bar" id="filter-bar">
+        <div className="filter-wrapper">
+          <Filter
+            categories={categories}
+            selectedCategory={state.category}
+            onCategoryChange={(category) =>
+              dispatch({ type: "SET_CATEGORY", payload: category })
+            }
+          />
+          <Sort
+            sortBy={state.sortBy}
+            onSortChange={(value) =>
+              dispatch({ type: "SET_SORT", payload: value })
+            }
+          />
+        </div>
+      </section>
+    </motion.div>
   );
 }
 
