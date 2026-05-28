@@ -35,7 +35,14 @@ function HeroBanner () {
           </div>
         </div>
       ))}
-
+        <div className="hero-controls">
+            <button className="hero-control-btn" onClick={() => moveSlide(-1)}>
+            ‹
+            </button>
+            <button className="hero-control-btn" onClick={() => moveSlide(1)}>
+            ›
+            </button>
+        </div>
     </header>
     );
 }
