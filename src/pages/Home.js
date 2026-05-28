@@ -48,13 +48,36 @@ function Home() {
       } catch (err) {
         console.error(err);
         setError("Failed to load products. Please try again later.");
-        
+
       } finally {
         setLoading(false);
       }
     };
     loadData();
   }, []);
+  
+    const filteredProducts = useMemo(() => {
+    let result = [...products];
+
+    if (state.category !== "all") {
+      result = result.filter((item) => item.category === state.category);
+    }
+
+    switch (state.sortBy) {
+      case "price-asc":
+        result.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        result.sort((a, b) => b.price - a.price);
+        break;
+      case "name-asc":
+        result.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      default:
+        break;
+    }
+    return result;
+  }, [products, state.category, state.sortBy]);
   );
 }
 
