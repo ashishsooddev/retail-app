@@ -25,14 +25,15 @@ function Cart() {
         </div>
         <div className="summary">
           <h2>Order Summary</h2>
-          <p>Subtotal: ${total}</p>
+          <p>Subtotal: ${total.toFixed(2)}</p>
           <p>Shipping: $15</p>
-          <h3>Total: ${total + 15}</h3>
+          <h3>Total: ${(total + 15).toFixed(2)}</h3>
           <button>Checkout</button>
         </div>
       </div>
     </div>
   );
+      <Footer />
 }
 
 export default Cart;
