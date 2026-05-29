@@ -141,3 +141,30 @@
     text-decoration: none;
 }
 
+.notfound {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.notfound h1 {
+    font-size: 120px;
+    color: #2563eb;
+}
+
+.notfound h2 {
+    font-size: 35px;
+}
+
+.notfound a {
+    padding: 15px 30px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
