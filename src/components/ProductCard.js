@@ -20,7 +20,7 @@ function ProductCard({ product }) {
 
         <div className="product-footer">
           <span className="product-price">${product.price.toFixed(2)}</span>
-          <span className="product-rating">⭐ {product.rating?.rate}</span>
+          <span className="product-rating">⭐{product.rating?.rate}</span>
         </div>
       </div>
     </article>
