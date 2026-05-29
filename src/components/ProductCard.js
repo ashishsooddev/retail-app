@@ -1,37 +1,30 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function ProductCard({ quantity, setQuantity }) {
-    
-    const decrease = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    };
+function ProductCard({ product }) {
+  return (
+    <article className="product-card" id={`product-${product.id}`}>
+      <div className="product-image-box">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="product-image"
+        />
+        <Link to={`/product/${product.id}`} className="add-cart-btn">
+          View
+        </Link>
+      </div>
 
-    const increase = () => {
-        if (quantity < 10) {
-            setQuantity(quantity + 1);
-        }
-    };
+      <div className="product-info">
+        <span className="product-category">{product.category}</span>
+        <h3 className="product-title">{product.title}</h3>
 
-    return (
-        <div className="quantity-section">
-            <span className="quantity-label">Quantity</span>
-            <div className="quantity-box">
-                <button 
-                    className="qty-btn"onClick={decrease}disabled={quantity <= 1}
-                >
-                    <i className="fas fa-minus"></i>
-                </button>
-                <span className="qty-value">{quantity}</span>
-                <button 
-                    className="qty-btn" onClick={increase}disabled={quantity >= 10}
-                >
-                    <i className="fas fa-plus"></i>
-                </button>
-            </div>
+        <div className="product-footer">
+          <span className="product-price">${product.price.toFixed(2)}</span>
+          <span className="product-rating">⭐ {product.rating?.rate}</span>
         </div>
-    );
+      </div>
+    </article>
+  );
 }
 
 export default ProductCard;
