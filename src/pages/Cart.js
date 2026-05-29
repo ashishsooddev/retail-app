@@ -2,6 +2,7 @@ import { CartContext } from "../Context/CartContext";
 import CartItem from "../components/CartItem";
 import { useContext } from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 
 function Cart() {
@@ -12,6 +13,7 @@ function Cart() {
   }
   return (
     <div className="cart-page">
+      <Header/>
       <h1>Your Cart</h1>
       <div className="cart-container">
         <div>
@@ -31,9 +33,9 @@ function Cart() {
           <button>Checkout</button>
         </div>
       </div>
+      <Footer />
     </div>
   );
-      <Footer />
 }
 
 export default Cart;

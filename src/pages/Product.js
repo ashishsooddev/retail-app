@@ -4,6 +4,7 @@ import axios from "axios";
 import QuantitySelector from "../components/QuantitySelector";
 import ProductGallery from "../components/ProductGallery";
 import { useCart } from "../Context/CartContext";
+import Footer from "../components/Footer";
 
 function Product() {
     const { id } = useParams();
@@ -133,12 +134,11 @@ function Product() {
                     </div>
                 </div>
             </div>
-            
-            
             <ProductGallery 
                 currentProductId={product.id} 
                 category={product.category}
             />
+            <Footer />
         </div>
     );
 }

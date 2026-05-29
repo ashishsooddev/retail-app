@@ -8,6 +8,7 @@ import SecondaryBanner from "../components/SecondaryBanner";
 import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 const initialState = {
   category: "all",
@@ -130,6 +131,7 @@ function Home() {
           </div>
         )}
       </main>
+      <Footer />
     </motion.div>
   );
 }
