@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import ProductCard from "../components/ProductCard";
+import QuantitySelector from "../components/QuantitySelector";
 import ProductGallery from "../components/ProductGallery";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../Context/CartContext";
+import Footer from "../components/Footer";
 
 function Product() {
     const { id } = useParams();
@@ -83,7 +84,7 @@ function Product() {
                     <div className="product-image-wrapper">
                         <img 
                             alt={product.title}
-                            className="product-image"
+                            className="home-product-image"
                             src={product.image}
                         />
                         <span className="product-badge">New Arrival</span>
@@ -101,8 +102,8 @@ function Product() {
                 
                 
                 <div className="product-right">
-                    <span className="product-category">{product.category}</span>
-                    <h1 className="product-title">{product.title}</h1>
+                    <span className="home-product-category">{product.category}</span>
+                    <h1 className="home-product-title">{product.title}</h1>
                     
                     <div className="product-rating">
                         <span className="stars">{renderStars(product.rating?.rate)}</span>
@@ -111,7 +112,7 @@ function Product() {
                     
                     <h2 className="product-price">${product.price}</h2>
                     <p className="product-description">{product.description}</p>
-                    <ProductCard quantity={quantity} setQuantity={setQuantity} />
+                    <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                     <div className="product-buttons">
                         <button 
                             className={`btn-add-cart ${added ? 'added' : ''}`}
@@ -133,12 +134,11 @@ function Product() {
                     </div>
                 </div>
             </div>
-            
-            
             <ProductGallery 
                 currentProductId={product.id} 
                 category={product.category}
             />
+            <Footer />
         </div>
     );
 }

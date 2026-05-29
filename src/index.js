@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
-import './Style/cart.css';
-import App from './App';
+import App from "./App";
+import { CartProvider } from "./Context/CartContext";
 
-import './Style/index.css';
+import "./Style/reset.css";
+import "./Style/index.css";
+import "./Style/home.css";
+import "./Style/product.css";
+import "./Style/cart.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <CartProvider>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </CartProvider>
   </React.StrictMode>
 );
-

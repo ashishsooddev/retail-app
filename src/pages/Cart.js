@@ -1,7 +1,8 @@
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../Context/CartContext";
 import CartItem from "../components/CartItem";
 import { useContext } from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 
 function Cart() {
@@ -12,6 +13,7 @@ function Cart() {
   }
   return (
     <div className="cart-page">
+      <Header/>
       <h1>Your Cart</h1>
       <div className="cart-container">
         <div>
@@ -25,12 +27,13 @@ function Cart() {
         </div>
         <div className="summary">
           <h2>Order Summary</h2>
-          <p>Subtotal: ${total}</p>
+          <p>Subtotal: ${total.toFixed(2)}</p>
           <p>Shipping: $15</p>
-          <h3>Total: ${total + 15}</h3>
+          <h3>Total: ${(total + 15).toFixed(2)}</h3>
           <button>Checkout</button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
