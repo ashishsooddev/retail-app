@@ -103,3 +103,72 @@
     font-size: 12px;
     letter-spacing: 0.1em;
 }
+.product-title {
+    font-size: 24px;
+    color: #1a1b25;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stars {
+    color: #0003b1;
+}
+
+.rating-count {
+    color: #454557;
+    font-size: 12px;
+}
+
+.product-price {
+    font-size: 48px;
+    color: #0003b1;
+    font-weight: 700;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #454557;
+    line-height: 1.6;
+}
+
+/* ==================== */
+/* PRODUCT CARD         */
+/* ==================== */
+
+.quantity-section {
+    margin: 16px 0;
+}
+
+.quantity-label {
+    display: block;
+    font-size: 12px;
+    color: #454557;
+    margin-bottom: 8px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #c5c4da;
+    border-radius: 8px;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
