@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import ProductCard from "../components/ProductCard";
+import QuantitySelector from "../components/QuantitySelector";
 import ProductGallery from "../components/ProductGallery";
 import { useCart } from "../Context/CartContext";
 
@@ -111,7 +111,7 @@ function Product() {
                     
                     <h2 className="product-price">${product.price}</h2>
                     <p className="product-description">{product.description}</p>
-                    <ProductCard quantity={quantity} setQuantity={setQuantity} />
+                    <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
                     <div className="product-buttons">
                         <button 
                             className={`btn-add-cart ${added ? 'added' : ''}`}
