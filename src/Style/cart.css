@@ -76,7 +76,6 @@
 }
 
 .remove {
-<<<<<<< HEAD
     margin-top: 15px;
     width: 110px;
     padding: 10px;
@@ -121,4 +120,24 @@
     cursor: pointer;
     border-radius: 8px;
 }
->>>>>>> 25cdc42 (added css of summary)
+
+.footer {
+    margin-top: 60px;
+    background: #111827;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.footer div {
+    display: flex;
+    gap: 20px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
