@@ -388,3 +388,28 @@
   }
 }
 
+@media (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 48px 20px;
+  }
+
+  .newsletter-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-button {
+    width: 100%;
+  }
+
+}
