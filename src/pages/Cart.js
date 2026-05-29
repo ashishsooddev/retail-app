@@ -1,4 +1,4 @@
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../context/CartContext";
 import CartItem from "../components/CartItem";
 import { useContext } from "react";
 import Footer from "../components/Footer";
