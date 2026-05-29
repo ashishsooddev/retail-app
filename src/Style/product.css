@@ -1,3 +1,18 @@
 @charset "utf-8";
 @import "./reset.css";
 
+.nav-path span:last-child {
+    color: #1a1b25;
+    font-weight: 500;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Product Container */
+.product-container {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 32px;
+}
