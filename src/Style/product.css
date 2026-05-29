@@ -73,3 +73,33 @@
     cursor: pointer;
     padding: 8px;
 }
+.thumbnail.active {
+    border: 2px solid #0003b1;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumbnail span {
+    color: #757589;
+    font-size: 12px;
+}
+
+/* Right Side */
+.product-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 96px;
+}
+
+.product-category {
+    text-transform: uppercase;
+    color: #454557;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
