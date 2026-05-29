@@ -121,24 +121,107 @@
     border-radius: 8px;
 }
 
-.footer {
-    margin-top: 60px;
-    background: #111827;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+.footer-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
 }
 
-.footer div {
-    display: flex;
-    gap: 20px;
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 
-.footer a {
-    color: white;
-    text-decoration: none;
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-description {
+  color: var(--text-soft);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  color: var(--text-soft);
+  transition: 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+.footer-newsletter {
+  width: 100%;
+}
+
+.newsletter-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter-input {
+  flex: 1;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  outline: none;
+  background: white;
+  font-size: 0.95rem;
+}
+
+.newsletter-input:focus {
+  border-color: var(--primary);
+}
+
+.newsletter-button {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.newsletter-button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 20px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
 }
 
 .notfound-container {
