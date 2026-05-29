@@ -247,3 +247,13 @@
 .error-box {
   color: #ba1a1a;
 }
+
+/* filtersort area===>*/
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  min-width: max-content;
+}
