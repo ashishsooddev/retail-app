@@ -1,50 +1,54 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-function Header ({cartCount = 0 }){
-    const [menuOpen, setMenuOpen] = useState(false);
-    return(
-        <nav className="header-nav" id="top-nav">
-            <div className="header-container">
-                <Link to="/" className="brand-logo">
-                    LuxeRetail
-                </Link>
+function Header({ cartCount = 0 }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-                <div className="desktop-links">
-                    <NavLink to="/" className="nav-link">New Arrivals</NavLink>
-                    <NavLink to="/" className="nav-link">Electronics</NavLink>
-                    <NavLink to="/" className="nav-link">Jewellery</NavLink>
-                    <NavLink to="/" className="nav-link">Men's</NavLink>
-                    <NavLink to="/" className="nav-link">Women's</NavLink>
-                </div>
+  return (
+    <nav className="header-nav" id="top-nav">
+      <div className="header-container">
+        <Link to="/" className="brand-logo">
+          LuxeRetail
+        </Link>
 
-                <div className="header-actions">
-                    <Link to="/cart" className="cart-link">
-                        <span className="cart-icon"></span>
-                        <span className="cart-badge">{cartCount}</span>
-                    </Link>
+        <div className="desktop-links">
+          <NavLink to="/" className="nav-link">Home</NavLink>
+          <NavLink to="/product/1" className="nav-link">Product</NavLink>
+          <NavLink to="/cart" className="nav-link">Cart</NavLink>
+          <NavLink to="/this-route-does-not-exist" className="nav-link">Not Found</NavLink>
+        </div>
 
-                    <button className="mobile-menu-btn"
-                        onClick={() => setMenuOpen (!menuOpen)}
-                        aria-label="Open menu">
-                    </button>
-                </div>
-            </div>
+        <div className="header-actions">
+          <Link to="/cart" className="cart-link">
+            🛒
+            <span className="cart-badge">{cartCount}</span>
+          </Link>
 
-            {menuOpen && (
-                <div className="mobile-menu">
-                    <NavLink to="/" className="mobile-nav-link"
-                         onClick={() => setMenuOpen(false)}>
-                            Home
-                    </NavLink>
-                    <NavLink to="/" className="mobile-nav-link"
-                         onClick={() => setMenuOpen(false)}>
-                            Cart
-                    </NavLink>
-                </div>
-            )}
-        </nav>
-    )
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div className="mobile-menu">
+          <NavLink to="/" className="mobile-nav-link" onClick={() => setMenuOpen(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/product/1" className="mobile-nav-link" onClick={() => setMenuOpen(false)}>
+            Product
+          </NavLink>
+          <NavLink to="/cart" className="mobile-nav-link" onClick={() => setMenuOpen(false)}>
+            Cart
+          </NavLink>
+        </div>
+      )}
+    </nav>
+  );
 }
 
 export default Header;
