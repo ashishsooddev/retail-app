@@ -120,3 +120,26 @@
   max-width: 680px;
   color: white;
 }
+
+.hero-tag {
+  display: inline-block;
+  background: #0911ee;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
