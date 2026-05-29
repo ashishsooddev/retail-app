@@ -143,3 +143,33 @@
   opacity: 0.9;
   margin-bottom: 32px;
 }
+
+.hero-button {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-controls {
+  position: absolute;
+  right: 48px;
+  bottom: 40px;
+  z-index: 5;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-control-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
