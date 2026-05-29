@@ -83,7 +83,7 @@ function Product() {
                     <div className="product-image-wrapper">
                         <img 
                             alt={product.title}
-                            className="product-image"
+                            className="home-product-image"
                             src={product.image}
                         />
                         <span className="product-badge">New Arrival</span>
@@ -101,8 +101,8 @@ function Product() {
                 
                 
                 <div className="product-right">
-                    <span className="product-category">{product.category}</span>
-                    <h1 className="product-title">{product.title}</h1>
+                    <span className="home-product-category">{product.category}</span>
+                    <h1 className="home-product-title">{product.title}</h1>
                     
                     <div className="product-rating">
                         <span className="stars">{renderStars(product.rating?.rate)}</span>
