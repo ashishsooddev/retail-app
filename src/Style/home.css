@@ -204,3 +204,46 @@
 .secondary-banner-card p {
   line-height: 1.6;
 }
+
+.filter-bar {
+  background: var(--surface-2);
+  position: sticky;
+  top: 80px;
+  z-index: 40;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  overflow-x: auto;
+}
+
+.product-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.loading-box,
+.error-box,
+.empty-box {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+}
+
+.error-box {
+  color: #ba1a1a;
+}
