@@ -225,19 +225,19 @@
 }
 
 .notfound-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 160px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 8%;
-  gap: 50px;
-  background-color: #f4f7fb;
-  font-family: Arial, Helvetica, sans-serif;
+  gap: 60px;
+  padding: 80px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .notfound-content {
   flex: 1;
-  max-width: 500px;
+  max-width: 540px;
 }
 
 .error-text {
@@ -271,7 +271,7 @@
 .home-btn,
 .browse-btn {
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -318,49 +318,42 @@
 
 .error-box {
   width: 100%;
-  max-width: 700px;
-  height: 600px;
-  border-radius: 20px;
+  max-width: 520px;
+  height: 500px;
+  border-radius: 24px;
   overflow: hidden;
+  position: relative;
   background-image: url("/src/assets/media/404-image.png");
   background-size: cover;
   background-position: center;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .error-box h1 {
   position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 120px;
   color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  letter-spacing: 10px;
+  letter-spacing: 8px;
 }
 
 @media (max-width: 992px) {
   .notfound-container {
     flex-direction: column;
     text-align: center;
-    padding: 40px 5%;
+    padding: 60px 20px;
   }
-
   .buttons {
     justify-content: center;
   }
-
   .notfound-content h1 {
     font-size: 42px;
   }
-
   .error-box {
-    height: 450px;
-  }
-
-  .error-box h1 {
-    font-size: 90px;
+    height: 420px;
   }
 }
 
@@ -368,21 +361,17 @@
   .notfound-content h1 {
     font-size: 34px;
   }
-
   .description {
     font-size: 16px;
   }
-
   .home-btn,
   .browse-btn {
     width: 100%;
     text-align: center;
   }
-
   .error-box {
     height: 350px;
   }
-
   .error-box h1 {
     font-size: 70px;
   }
@@ -397,7 +386,6 @@
 }
 
 @media (max-width: 768px) {
-
   .footer-container {
     grid-template-columns: 1fr;
     padding: 48px 20px;
@@ -411,5 +399,4 @@
   .newsletter-button {
     width: 100%;
   }
-
 }
