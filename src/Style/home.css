@@ -173,3 +173,34 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.secondary-banner {
+  max-width: 1280px;
+  margin: 32px auto 0;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.secondary-banner-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.secondary-banner-dark {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary-banner-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.secondary-banner-card p {
+  line-height: 1.6;
+}
