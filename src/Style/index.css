@@ -1,5 +1,59 @@
 @charset "utf-8";
 @import "./reset.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+:root {
+  --bg: #fbf8ff;
+  --surface: #ffffff;
+  --surface-2: #f5f2ff;
+  --surface-3: #eeecfb;
+  --border: #e3e1f0;
+  --text: #1a1b25;
+  --text-soft: #454557;
+  --primary: #0003b1;
+  --primary-soft: #adb2ff;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.page-container {
+  width: 100%;
+}
 
